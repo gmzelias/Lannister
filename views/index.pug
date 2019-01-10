@@ -1,0 +1,19 @@
+extend layout.pug
+
+block content
+    h1= title
+    p Hi! This is a #{message}.
+    p It has an index, contact and about pages, and three specific pages that list a car brand and three of their popular models. 
+    p These pages are not static HTML pages. They are generated dynamically using Express routes each time a user requests them. You can access them by clicking the following links, or by directly appending /toyota, /subaru or /nissan to the URL of this page in the browser address bar:
+      ul
+        li 
+          a(href="/toyota") Toyota
+        li 
+          a(href="/subaru") Subaru
+        li 
+          a(href="/nissan") Nissan
+    p For access to the about and contact pages click on the links on the menu at the top of the page.
+    
+
+
+
