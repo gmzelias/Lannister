@@ -3,6 +3,9 @@ const app = express();
 const routes = require ('./routes');
 var bodyParser = require('body-parser');
 
+//process.env is an object that stores all of env vari as key value pairs
+const port = process.env.PORT || 3000;
+
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 
@@ -18,7 +21,7 @@ app.use(express.static('views'));
 
 app.use(routes);
 
-app.listen(3000, function () {
-  console.log('Example app listening on port 3000!');
+app.listen(port, function () {
+  console.log(`Example app listening on port ${port}`);
 })
 

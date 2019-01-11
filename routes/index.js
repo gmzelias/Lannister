@@ -32,7 +32,6 @@ router.post('/addCont', function (req, res) {
     var DateQuery = req.body.Date;
     var SQL = 'SELECT ID FROM Contribuyente WHERE Nombre = ? AND  Apellido_Pri = ? AND  Apellido_Sec = ? AND  Direccion = ? AND  Tributa = ? AND  Date = ?';
     pool.query(SQL, [Nombre, Apellido_Pri,Apellido_Sec,Direccion,Tributa,DateQuery], function(err, rows, fields) {
-    console.log('las rows ' + rows);
     if (rows == 0){
       pool.query('INSERT INTO Contribuyente SET ?', DataToInsert, function (error, results, fields) {
         if (!error){
