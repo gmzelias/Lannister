@@ -15,14 +15,11 @@ var pool      =    mysql.createPool({
 
 router.get('/', function (req, res) {
   res.render('index', { 
-    title: 'Home', 
-    message: pjson.description, 
-    name: pjson.name 
+    title: 'Home'
 })
 })
 
 router.post('/addCont', function (req, res) {
-  console.log(req.body);
   DataToInsert = req.body;
     var Nombre = req.body.Nombre;
     var Apellido_Pri = req.body.Apellido_Pri;
@@ -52,7 +49,6 @@ router.post('/addCont', function (req, res) {
         message : 'Repeated'});
       }
   });
-
 })
 
 router.get('/getCont', function (req, res) {
@@ -74,35 +70,14 @@ router.get('/getCont', function (req, res) {
   });
 })
 
-router.get('/addCont', function (req, res) {
-  res.send({error : 0,
-           message : 'completed'})
- })
-
-router.get('/contact', function (req, res) {
-  res.render('contact', { 
-    title: 'Contact', 
-    message: '555-555-5555', 
-    name: pjson.name 
-})
+router.get('/nuevoCont', function (req, res) {
+  res.send({error : 0});
 })
 
-router.get('/:id', function (req, res) {
-  var i = 0;
-  switch(req.params.id) {
-    case 'toyota': i = 0; break;
-    case 'subaru': i = 1; break;
-    case 'nissan': i = 2; 
-}
-  
-  res.render('cars', { 
-    currentBrand: req.params.id.charAt(0).toUpperCase() + req.params.id.substr(1),
-    title: req.params.id,
-    name: pjson.name,
-    model1: cars[i].models[0], 
-    model2: cars[i].models[1],
-    model3: cars[i].models[2]
-    })
+router.post('/validatePassword', function (req, res) {
+  if (  req.body.pass == process.env.CLAVE) res.send({error : 0});
+  else res.send({error : 1})
 })
+
 
 module.exports = router;

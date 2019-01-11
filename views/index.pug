@@ -12,6 +12,16 @@ block content
           button#resumenTributos.dashboardbtn.btn.btn-success(type='button') Resumen de Tributos
           button#nuevoTributo.dashboardbtn.btn.btn-success(type='button') Nuevo Tributo
           button#nuevoContribuyente.dashboardbtn.btn.btn-success(type='button') Nuevo Contribuyente
+          #exampleModal-dashboard.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalLabel', aria-hidden='true')
+            .modal-dialog.modal-dialog-centered.modal-sm
+              .modal-content
+                .modal-header-password
+                  h5#exampleModalLabel.modal-title Password
+                  button.close(type='button', data-dismiss='modal', aria-label='Close')
+                    span(aria-hidden='true') ×
+                .modal-body-dashboard
+                .modal-footer-password
+                  button#checkpassword.btn.btn-secondary(type='button') Enviar
   #newpage
           script(src='js/main.js')
 
