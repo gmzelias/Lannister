@@ -14,274 +14,77 @@ html {
 /* Base Style */
 
 body {
-  
   font-family: 'Catamaran', 'Helvetica', 'Arial', sans-serif;
   font-size: 18px;  
   color: #222;
-  border-top: 5px solid red;
-  padding: 1em 0.5em;
-  max-width: 769px;
-  margin: 0 auto;
 }
-
-
-
-
-/* Typography */
-
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 300; 
+.dashboardbtn{
+  margin:20px;
+  display: inline-grid;
 }
+.shortinput{
+  width: 49%;}
 
-h1 {
-  font-size: 2em;
-  line-height: 1.2em;
-  margin-bottom: .4em;
-}
+  .trib-cal{
+    text-align: center;
+  }
 
-h2 {
-  font-size: 1.8em;
-  line-height: 1.2em;
-  margin-bottom: .4em;
-}
-
-h3 {
-  font-size: 1.6em;
-  line-height: 1.2em;
-  margin-bottom: .35em;
-}
-
-h4 {
-  font-size: 1.4em;
-  line-height: 1.2em;
-  margin-bottom: .35em;
-}
-
-h5 {
-  font-size: 1.2em;
-  line-height: 1.2em;
-  margin-bottom: .3em;
-}
-
-h6 {
-  font-size: 1em;
-  line-height: 1.2em;
-  margin-bottom: .3em;
-}
-
-
-/* Links */
-
-a:link, 
-a:visited, 
-a:active {
-  color: #000;
-  text-decoration: underline;
-}
-
-a:hover,
-a:focus {
-  color: #999;
-}
-
-
-/* Lists */
-
-ul {
-  list-style-type: square;
-}
-
-ul, ol {
-  margin-bottom: 1.0rem;
-  margin-left: 1.5rem;
-}
-
-li {
-  margin-bottom: 0.7rem;
-}
-
-
-/* Navigation */ 
-
-nav {
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
-
-.blocknav a {
-  display: block;
-  text-align: center;    
-  text-decoration: none;
-}
-
-.blocknav a:link, 
-.blocknav a:visited, 
-.blocknav a:active {
-  color: #000;
-}
-
-.blocknav a:hover,
-.blocknav a:focus {
-  color: #999;
-}
-  
-.blocknav li {
-  list-style-type: none;
-  margin-left: 0;
-  font-size: 75%;
-  text-transform: uppercase;
-}
-
-ul.blocknav {
-  margin-bottom: 1.0em;
-  margin-left: 0;
-}
-
-.logo {
-  width: 80px;
-}
-
-
-/* Code */
-
-code {
-  padding: .2rem .5rem;
-  margin: 1.0rem .2rem;
-  font-size: 90%;
-  white-space: nowrap;
-  background: #F1F1F1;
-  border: 1px solid #E1E1E1;
-  border-radius: 4px; 
-}
-
-pre > code {
-  display: block;
-  padding: 1rem 1.5rem;
-  white-space: pre; 
-}
-
-
-/* Buttons */
-
-button, .button, input[class="submit"] {
-  display: inline-block;
-  height: 38px;
-  padding: 0 30px;
-  color: #772953;
-  text-align: center;
-  font-size: 11px;
-  font-weight: 600;
-  line-height: 38px;
-  letter-spacing: .1rem;
-  text-transform: uppercase;
-  text-decoration: none;
-  white-space: nowrap;
-  background-color: transparent;
-  border-radius: 4px;
-  border: 1px solid #000;
-  cursor: pointer;
-  box-sizing: border-box;
-}
-
-
-/* Form */
-
-p#warningName, 
-p#warningEmail, 
-p#warningComment {
-  color: red;
-}
-
-input[type=text], 
-input[type=email], 
-textarea {
-  border: 0px;
-  width: 100%;
-  height: 2.0em;
-  margin: 2px 0;
-  padding-left: 0.5em;
-  font-size: 1.0em;
-  font-family: 'Arial', sans-serif;
-  box-sizing: border-box;
-}
-
-input:focus, 
-textarea:focus {
-  border: 0px;
-  border-bottom: 3px solid #1e90ff;
-}
-
-input[type=submit]:focus {
-  border: none;
-}
-
-::-webkit-input-placeholder {
-  color: #d4d4d4;
-}
-
-:-moz-placeholder { /* Firefox 18- */
-  color: #d4d4d4;  
-}
-
-::-moz-placeholder {  /* Firefox 19+ */
-  color: #d4d4d4;  
-}
-
-:-ms-input-placeholder {  
-  color: #d4d4d4;  
-}
-
-input:-webkit-autofill {
-  -webkit-box-shadow: 0 0 0px 1000px white inset;
-}
-
-
-/* Images */
-
-img.profile {
-  padding: 4px;
-  border: 1px solid #ccc;
-  box-shadow: 1px 3px 3px #ddd;
-  margin-bottom: 1em;
-  margin-right:2%;
-}
-
-img.profile.small{
-  width: 165px;
-}
-
-img.profile.medium {
-  width: 300px;
-}
-
-img {
-  max-width: 100%;
-}
-
-/* Image Gallery */
-
-.picbox {
-  display: inline-block; 
-  margin: 0.5em;
-}
-
-figure {
-  margin: 0;
-  position: relative;
+  .nuevo-cont{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
 
 }
 
-figcaption {
-  font-size: 0.85em;
+  .botrow{
+    margin-left: 15px;
+    width: 92%;
+  }
+
+.lan_logo{
+  margin-bottom: 35px;
+}
+.img-fluid2 {
+  max-width:40%;
+  height: auto;
+
+}.img-header {
+  max-width:10%;
+  height: auto;
+  margin-right: 10px;
+}
+
+.logotitle{
+  display: -webkit-box;
+}
+
+.formcontribuyente{
+border: solid #f7f7f9;
+border-width: 5px;
+padding: 10px;
+margin-bottom: 50px;
+padding-left: 80px;
+padding-right: 0px;
+}
+
+.form-calendar {
+  width: 50%;
+  height: calc(2.25rem + 2px);
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  font-weight: 400;
   line-height: 1.5;
-  color: #fff;
-  background: rgba(19,43,102, .50);
-  bottom: 0;
-  position: absolute;
-  margin-bottom: 33px;
-  margin-left: 5px;
-  padding: 0.6em;
-  box-sizing: border-box;  
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.ui-datepicker-trigger{
+  padding-left: 5px;
+  margin-bottom: 10px
 }
 
 
@@ -352,9 +155,6 @@ float: right;
 
 @media (min-width: 769px) {
 
-nav {
-  text-align: left;
-}
 
 .logo {
   display: inline-block;
@@ -371,5 +171,5 @@ ul.blocknav {
 }
 
 
-
+}
 

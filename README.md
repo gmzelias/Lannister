@@ -1,2 +1,2 @@
-# minimal-express
-A simple dynamic site made with Node.js and Express.js
+# Lannister
+A complete web app using MVC

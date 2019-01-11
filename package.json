@@ -1,15 +1,18 @@
 {
-  "name": "Express.js Example",
+  "name": "Lannister",
   "version": "1.0.0",
   "description": "simple dynamic site made with Node.js and Express.js.",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Mario Sanchez Carrion",
-  "license": "ISC",
+  "author": "Elias Gomez",
+  "license": "",
   "dependencies": {
+    "body-parser": "^1.18.3",
+    "bootstrap": "^4.2.1",
     "express": "^4.15.3",
+    "mysql": "^2.16.0",
     "pug": "^2.0.0-rc.2"
   }
 }
