@@ -1,0 +1,93 @@
+<div id="nuevoTributo">
+    <nav class="navbar navbar-light bg-light" >
+      <div class="logotitle">
+          <img class="img-header" alt="Lannister" src="img/Lannister_Logo.png">
+          <span class="navbar-brand mb-0 h1">Lannister</span>
+      </div>
+    </nav>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item landingFromNewTrib"><a href="#">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Nuevo Tributo</a></li>
+      </ol>
+    </nav>
+    
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="formtributo">
+              <h2 style="margin-bottom: 20px;">Nuevo Tributo</h2>
+
+              <div class="row" style="text-align: right;">
+                <div class="col">
+                    <select class="form-control form-control" id="contdropdown"></select>
+                </div>
+                <div class="col">
+                    <input type="text" id="datepicker" class="form-calendar">
+                </div>
+              </div>
+              <div class="row secondrowtrib">
+                    <div class="col-4">
+                        <input id="cuantia" type="number" value="100" min="0" max="100000" step="1"/>
+                    </div>
+                    <div class="col">   
+                    <div class="form-check-tributo">
+                        <input class="form-check-input" type="checkbox" id="tribCheck">
+                        <label class="form-check-label" for="gridCheck">
+                        Recaudado
+                        </label>
+                    </div>
+                    </div>
+                </div>
+                <div class="row secondrowtrib">
+                    <div class="col">
+                        <textarea type="text" style="overflow:auto;resize:none" rows="3" maxlength="140" class="form-control" id="direccion" placeholder="Notas"></textarea>
+                    </div>
+                </div>
+
+                <div class="row secondrowtrib locationdiv">
+                        <div class="col">
+                            <div class="addressinfo">
+                                <p id='country_name'></p>
+                                <p id='city'></p>
+                                <p id='postal'></p>
+                            </div>
+                        </div>
+                        <div class="location_load">
+                                <div class="lds-dual-ring"></div>
+                            </div>
+                        <div class="col">
+                            <div class="addressinfocoors">
+                                <p id='lat'></p>
+                                <p id='long'></p>
+                            </div>
+                        </div>
+                </div>
+                <div class="nuevo-cont">
+                        <button id="nuevoTrib" class="btn btn-primary">Nuevo</button>
+                </div>  
+            </div>
+ 
+        </div>
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Info</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                </div>
+              </div>
+            </div>
+          </div>      
+</div>
+<script src="js/nuevoTrib.js"></script>
+</script>
+    

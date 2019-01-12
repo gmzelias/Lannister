@@ -1,27 +1,32 @@
 
-$('.landing').on('click',function() { 
+/*Datepicker calendar initialization*/ 
+ $("#datepicker" ).datepicker({
+        showOn: "button",
+        buttonImage: "img/icon-calendar.png",
+        buttonImageOnly: true,
+        buttonText: "Select date"
+      });
+$("#datepicker").datepicker().datepicker("setDate", new Date());
+
+/*Breadcrum home action*/ 
+$('.landingFromCont').on('click',function() { 
+    $('#contTable').DataTable().destroy();
     $('#newpage').hide();  
-    $('#main').show();  
+    $('#main').show();   
 })
 
-$('#exampleModal').modal({ show: false})
 /*Request that returns datatable data and datatable generation*/ 
 $.ajax({
     type: "GET",
     url: "/getCont",
     success: function(a) {  
         var dataSet = a.data;
-        console.log(dataSet);
-        $('#example').DataTable( {
+        $('#contTable').DataTable( {
         scrollX:        true,
         scrollCollapse: true,
-        autoWidth:         true,  
-         paging:         true,       
-        columnDefs: [
-        { "width": "150px", "targets": [0,1] },       
-        { "width": "40px", "targets": [4] }
-      ],
-            data: dataSet,
+        paging:         true, 
+        "bDestroy": true,    
+         data: dataSet,
             columns: [
                 { title: "Nombre" },
                 { title: "Apellido1" },
@@ -60,6 +65,10 @@ $('#nuevoCont').on('click',function() {
       Tributa:$('#tribCheck').is(":checked"),
       Date:$('#datepicker').val(),
     }
+
+    if(data.Tributa == true) data.Tributa ='Si'
+    else data.Tributa ='No'
+
     if(data.Nombre == ""){
         $("#nombre").removeClass("form-control");
         $("#nombre").addClass("invalid-field");
@@ -93,8 +102,8 @@ if(missing == false){
                     url: "/nuevoCont",
                     /*data: data,*/
                     success: function(a) {  
-                        $('.maindashboard').hide();  
-                        $( ".body" ).load( "nuevoCont.html", function() {
+                    // $('.maindashboard').hide();  
+                        $( "#newpage" ).load( "nuevoCont.html", function() {
                             $('.modal-body').empty();
                             $('.modal-body').append("<p style='margin-bottom: 00px;text-align: center;'>Usuario creado exitosamente</p>"); 
                             $('#exampleModal').modal('show');
@@ -106,7 +115,6 @@ if(missing == false){
             }
         },
         error: function (e) {
-
         },
     });
 }
