@@ -201,7 +201,7 @@ router.get('/TribsEcuations', function (req, res) {
               tribsDay = rows[0].tribsDay;
                 pool.query(`SELECT    AVG(Cuantia) as tribaveano, Fecha_Creacion 
                 FROM      tributo 
-                WHERE     YEAR(Fecha_Creacion) = '201/' 
+                WHERE     YEAR(Fecha_Creacion) = '2018' 
                 GROUP BY  MONTH(Fecha_Creacion)`, function(err, rows, fields) {
                 //console.log(rows);  
                 tribaveano = rows;
