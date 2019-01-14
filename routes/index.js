@@ -61,8 +61,8 @@ router.get('/getCont', function (req, res) {
     {
       for(var i = 0; i < rows.length;i++){  
         var checkintable;
-        if (rows[i].Tributa == 'Si')   checkintable='<div style= "text-align: center;"><input type="checkbox" checked style="height:19px; width:19px;"></input></div>'
-        else checkintable='<div style="text-align: center;"><input type="checkbox" style="height:19px; width:19px;"></input></div>'
+        if (rows[i].Tributa == 'Si')   checkintable='<div style= "text-align: center;"><input disabled type="checkbox" checked style="height:19px; width:19px;"></input></div>'
+        else checkintable='<div style="text-align: center;"><input disabled type="checkbox" style="height:19px; width:19px;"></input></div>'
         var datatoinsert = [rows[i].Nombre,rows[i].Apellido_Pri,rows[i].Apellido_Sec,rows[i].Direccion,rows[i].Date,checkintable];
         data.push(datatoinsert);
       }
@@ -212,7 +212,6 @@ router.get('/TribsEcuations', function (req, res) {
                   'tribaveano':tribaveano,
                   'currentMonth':currentMonth
                 }
-                console.log(dataTribs);
                 res.send({error : 0, dataTribs});
               });
                   if (err){
