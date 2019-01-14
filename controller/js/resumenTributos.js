@@ -14,20 +14,23 @@ $.ajax({
     success: function(a) {  
         var months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
         if (a.dataTribs.tribaveano.length != 0){
-            $(".card-text-Dia").text(a.dataTribs.tribsDay + "$");
-            $(".card-text-Mes").text(a.dataTribs.tribsMes+ "$");
-            $(".card-text-Ano").text(a.dataTribs.tribsAno+ "$");
+            if (a.dataTribs.tribsDay != null) $(".card-text-Dia").text(a.dataTribs.tribsDay + "$");
+            else $(".card-text-Dia").text(0+ "$"); 
+            if (a.dataTribs.tribsMes != null) $(".card-text-Mes").text(a.dataTribs.tribsMes+ "$");
+            else $(".card-text-Mes").text(0+ "$"); 
+            if (a.dataTribs.tribsAno != null) $(".card-text-Ano").text(a.dataTribs.tribsAno+ "$");
+            else $(".card-text-Ano").text(0+ "$");
         var d = new Date(a.dataTribs.tribaveano[0].Fecha_Creacion);
         var monthstochart = months.slice(d.getMonth(), a.dataTribs.tribaveano.length);
-        console.log(a.dataTribs.tribaveano);
+        //console.log(a.dataTribs.tribaveano);
         var datatochart = [];
         var datatochartsumMonthly = [];
         var sumMonthly = 0;
         for(var i = 0; i <a.dataTribs.tribaveano.length;i++){                     
             datatochart.push(a.dataTribs.tribaveano[i].tribaveano);
-            console.log(a.dataTribs.tribaveano[i].tribaveano);
+          //  console.log(a.dataTribs.tribaveano[i].tribaveano);
             sumMonthly = sumMonthly + a.dataTribs.tribaveano[i].tribaveano;
-            console.log(sumMonthly);
+           // console.log(sumMonthly);
             datatochartsumMonthly.push(sumMonthly);       
         }
         }else{

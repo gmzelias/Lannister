@@ -89,7 +89,7 @@ router.get('/getTrib', function (req, res) {
         var n = str.indexOf(" ");
         var nombrecont = str.slice(0, n);
         var apellidocont = str.slice(n, str.length);
-        var Fecha_CreacionATable = moment(rows[i].Fecha_Creacion, "DD/MM/YYYY").format('L');   
+        var Fecha_CreacionATable = moment(rows[i].Fecha_Creacion, "DD/MM/YYYY").format('DD-MM-YY');   
         var datatoinsert = [nombrecont,apellidocont,Fecha_CreacionATable,rows[i].Cuantia+'$',Lugar_Recogida];
         data.push(datatoinsert);
       }
@@ -185,8 +185,8 @@ router.post('/addTrib', function (req, res) {
 })
 
 router.get('/TribsEcuations', function (req, res) {
-  var currentMonth = new Date().getMonth();
-  var currentDay = new Date().getDay();
+  var currentMonth = new Date().getMonth()+1;
+  var currentDay = new Date().getDate();
   var TribsData ={};
   var tribsDay = 0;
   var tribMes = 0;
@@ -197,6 +197,7 @@ router.get('/TribsEcuations', function (req, res) {
       tribAno = rows[0].TribAno;
         pool.query(`SELECT AVG(CUANTIA) as tribMes FROM tributo WHERE Month(Fecha_Creacion) = ${currentMonth}`, function(err, rows, fields) {
           tribMes = rows[0].tribMes;
+          console.log(tribMes);
             pool.query(`SELECT SUM(CUANTIA) as tribsDay FROM tributo WHERE Day(Fecha_Creacion) = ${currentDay}`, function(err, rows, fields) {
               tribsDay = rows[0].tribsDay;
                 pool.query(`SELECT    AVG(Cuantia) as tribaveano, Fecha_Creacion 
