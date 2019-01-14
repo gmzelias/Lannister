@@ -23,9 +23,11 @@ $.ajax({
         var months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
         var d = new Date(a.dataTribs.tribaveano[0].Fecha_Creacion);
         var monthstochart = months.slice(d.getMonth(), a.dataTribs.tribaveano.length);
-        console.log(a.dataTribs.tribaveano.length);
+        console.log(a.dataTribs.tribaveano[0].Fecha_Creacion + 'array tribveano');
+        console.log(d.getMonth() + 'mes actual');
+        console.log(a.dataTribs.tribaveano.length + ' tamano dela rray');
         console.log(monthstochart);
-        console.log(d.getMonth());
+        
         var datatochart = [];
         var datatochartsumMonthly = [];
         var sumMonthly = 0;
