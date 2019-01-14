@@ -192,7 +192,8 @@ router.get('/TribsEcuations', function (req, res) {
   var tribMes = 0;
   var tribAno = 0;
   var tribaveano = 0;
-    pool.query('SELECT SUM(CUANTIA) as TribAno FROM tributo WHERE YEAR(Fecha_Creacion) = 2019', function(err, rows, fields) {
+  /*Querys are using 2018 as value, not current year */
+    pool.query('SELECT SUM(CUANTIA) as TribAno FROM tributo WHERE YEAR(Fecha_Creacion) = 2018', function(err, rows, fields) {
       tribAno = rows[0].TribAno;
         pool.query(`SELECT AVG(CUANTIA) as tribMes FROM tributo WHERE Month(Fecha_Creacion) = ${currentMonth}`, function(err, rows, fields) {
           tribMes = rows[0].tribMes;
@@ -200,7 +201,7 @@ router.get('/TribsEcuations', function (req, res) {
               tribsDay = rows[0].tribsDay;
                 pool.query(`SELECT    AVG(Cuantia) as tribaveano, Fecha_Creacion 
                 FROM      tributo 
-                WHERE     YEAR(Fecha_Creacion) = '2019' 
+                WHERE     YEAR(Fecha_Creacion) = '201/' 
                 GROUP BY  MONTH(Fecha_Creacion)`, function(err, rows, fields) {
                 //console.log(rows);  
                 tribaveano = rows;
