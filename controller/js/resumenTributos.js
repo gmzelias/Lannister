@@ -22,8 +22,10 @@ $.ajax({
        
         if (a.dataTribs.tribaveano.length != 0){
         var d = new Date(a.dataTribs.tribaveano[0].Fecha_Creacion);
-        var monthstochart = months.slice(d.getMonth()+1, a.dataTribs.tribaveano.length);
-        //console.log(a.dataTribs.tribaveano);
+        var monthstochart = months.slice(d.getMonth(), a.dataTribs.tribaveano.length-1);
+        console.log(a.dataTribs.tribaveano.length);
+        console.log(monthstochart);
+        console.log(d.getMonth());
         var datatochart = [];
         var datatochartsumMonthly = [];
         var sumMonthly = 0;
