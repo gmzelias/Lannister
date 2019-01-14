@@ -12,7 +12,6 @@ $.ajax({
     type: "GET",
     url: "/TribsEcuations",
     success: function(a) {  
-        var months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
             if (a.dataTribs.tribsDay != null) $(".card-text-Dia").text(a.dataTribs.tribsDay + "$");
             else $(".card-text-Dia").text(0+ "$"); 
             if (a.dataTribs.tribsMes != null) $(".card-text-Mes").text(a.dataTribs.tribsMes+ "$");
@@ -21,8 +20,9 @@ $.ajax({
             else $(".card-text-Ano").text(0+ "$");
        
         if (a.dataTribs.tribaveano.length != 0){
+        var months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
         var d = new Date(a.dataTribs.tribaveano[0].Fecha_Creacion);
-        var monthstochart = months.slice(d.getMonth(), a.dataTribs.tribaveano.length-1);
+        var monthstochart = months.slice(d.getMonth(), a.dataTribs.tribaveano.length);
         console.log(a.dataTribs.tribaveano.length);
         console.log(monthstochart);
         console.log(d.getMonth());
