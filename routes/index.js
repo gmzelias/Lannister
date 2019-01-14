@@ -209,8 +209,10 @@ router.get('/TribsEcuations', function (req, res) {
                   'tribsAno':tribAno,
                   'tribsMes':tribMes,
                   'tribsDay':tribsDay,
-                  'tribaveano':tribaveano
+                  'tribaveano':tribaveano,
+                  'currentMonth':currentMonth
                 }
+                console.log(dataTribs);
                 res.send({error : 0, dataTribs});
               });
                   if (err){

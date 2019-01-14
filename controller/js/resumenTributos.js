@@ -21,13 +21,12 @@ $.ajax({
        
         if (a.dataTribs.tribaveano.length != 0){
         var months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
-        var d = new Date(a.dataTribs.tribaveano[0].Fecha_Creacion);
-        var monthstochart = months.slice(d.getMonth(), a.dataTribs.tribaveano.length);
+        var monthstochart = months.slice(a.dataTribs.currentMonth, a.dataTribs.tribaveano.length);
+       /* console.log(a.dataTribs.tribaveano[0] + 'array pos 0');
         console.log(a.dataTribs.tribaveano[0].Fecha_Creacion + 'array tribveano');
-        console.log(d.getMonth() + 'mes actual');
+        console.log(a.dataTribs.tribaveano[0].currentMonth + 'mes actual');
         console.log(a.dataTribs.tribaveano.length + ' tamano dela rray');
-        console.log(monthstochart);
-        
+        console.log(monthstochart);*/   
         var datatochart = [];
         var datatochartsumMonthly = [];
         var sumMonthly = 0;
