@@ -197,7 +197,6 @@ router.get('/TribsEcuations', function (req, res) {
       tribAno = rows[0].TribAno;
         pool.query(`SELECT AVG(CUANTIA) as tribMes FROM tributo WHERE Month(Fecha_Creacion) = ${currentMonth}`, function(err, rows, fields) {
           tribMes = rows[0].tribMes;
-          console.log(tribMes);
             pool.query(`SELECT SUM(CUANTIA) as tribsDay FROM tributo WHERE Day(Fecha_Creacion) = ${currentDay}`, function(err, rows, fields) {
               tribsDay = rows[0].tribsDay;
                 pool.query(`SELECT    AVG(Cuantia) as tribaveano, Fecha_Creacion 

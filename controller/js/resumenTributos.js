@@ -13,15 +13,16 @@ $.ajax({
     url: "/TribsEcuations",
     success: function(a) {  
         var months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
-        if (a.dataTribs.tribaveano.length != 0){
             if (a.dataTribs.tribsDay != null) $(".card-text-Dia").text(a.dataTribs.tribsDay + "$");
             else $(".card-text-Dia").text(0+ "$"); 
             if (a.dataTribs.tribsMes != null) $(".card-text-Mes").text(a.dataTribs.tribsMes+ "$");
             else $(".card-text-Mes").text(0+ "$"); 
             if (a.dataTribs.tribsAno != null) $(".card-text-Ano").text(a.dataTribs.tribsAno+ "$");
             else $(".card-text-Ano").text(0+ "$");
+       console.log(a.dataTribs.tribaveano);
+        if (a.dataTribs.tribaveano.length != 0){
         var d = new Date(a.dataTribs.tribaveano[0].Fecha_Creacion);
-        var monthstochart = months.slice(d.getMonth(), a.dataTribs.tribaveano.length);
+        var monthstochart = months.slice(d.getMonth()+1, a.dataTribs.tribaveano.length);
         //console.log(a.dataTribs.tribaveano);
         var datatochart = [];
         var datatochartsumMonthly = [];
@@ -37,9 +38,6 @@ $.ajax({
             var monthstochart = [];
             var datatochart = [];
             var datatochartsumMonthly = [];
-            $(".card-text-Dia").text(0+ "$");
-            $(".card-text-Mes").text(0+ "$");
-            $(".card-text-Ano").text(0+ "$");
         }
         
         var ctx = document.getElementById("myChart");
