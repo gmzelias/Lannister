@@ -21,7 +21,7 @@ $.ajax({
        
         if (a.dataTribs.tribaveano.length != 0){
         var months = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
-        var monthstochart = months.slice(a.dataTribs.currentMonth, a.dataTribs.tribaveano.length);
+        var monthstochart = months.slice(a.dataTribs.currentMonth-1, a.dataTribs.tribaveano.length);
        /* console.log(a.dataTribs.tribaveano[0] + 'array pos 0');
         console.log(a.dataTribs.tribaveano[0].Fecha_Creacion + 'array tribveano');
         console.log(a.dataTribs.tribaveano[0].currentMonth + 'mes actual');
@@ -51,7 +51,7 @@ $.ajax({
             data: {
                 labels: monthstochart,
                 datasets: [{
-                    label: 'Recaudacion Mes',
+                    label: 'Recaudación Mes',
                     data:datatochart,
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
@@ -72,7 +72,7 @@ $.ajax({
                     borderWidth: 1
                 },{
                     data:datatochartsumMonthly,
-                    label: 'Recaudacion Acumulado',
+                    label: 'Recaudación  Acumulado',
                     backgroundColor: [
                         'rgba(255, 199, 132, 0.2)',
                         'rgba(154, 62, 235, 0.2)',

@@ -47,7 +47,7 @@ $.ajax({
     url: "https://geoip-db.com/json/",
     success: function(a) {  
         var obj = JSON.parse(a);
-        if(obj.country_name!=null) $("#country_name").text("Pais: "+obj.country_name);
+        if(obj.country_name!=null) $("#country_name").text("País: "+obj.country_name);
         if(obj.city!=null) $("#city").text("Ciudad: "+obj.city);
         if(obj.postal!=null) $("#postal").text("Zip: "+obj.postal);
         if (navigator.geolocation) {
