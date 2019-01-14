@@ -19,7 +19,7 @@ $.ajax({
             else $(".card-text-Mes").text(0+ "$"); 
             if (a.dataTribs.tribsAno != null) $(".card-text-Ano").text(a.dataTribs.tribsAno+ "$");
             else $(".card-text-Ano").text(0+ "$");
-       console.log(a.dataTribs.tribaveano);
+       
         if (a.dataTribs.tribaveano.length != 0){
         var d = new Date(a.dataTribs.tribaveano[0].Fecha_Creacion);
         var monthstochart = months.slice(d.getMonth()+1, a.dataTribs.tribaveano.length);
@@ -39,7 +39,9 @@ $.ajax({
             var datatochart = [];
             var datatochartsumMonthly = [];
         }
-        
+        console.log(monthstochart);
+        console.log(datatochart);
+        console.log(datatochartsumMonthly);
         var ctx = document.getElementById("myChart");
         var myChart = new Chart(ctx, {
             type: 'line',
