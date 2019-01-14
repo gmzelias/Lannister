@@ -72,3 +72,18 @@ $('#addContribuyente').on('click',function() {
         },
     });
 })
+
+$('#resumenTributos').on('click',function() { 
+    $.ajax({
+        type: "GET",
+        url: "/resumenTributos",
+        success: function(a) {  
+            $('#main').hide();  
+            $( "#newpage" ).load( "resumenTributos.html", function() {
+                $("#newpage").show();
+            });
+        },
+        error: function (e) {
+        },
+    });
+})

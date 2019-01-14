@@ -4,9 +4,13 @@
         showOn: "button",
         buttonImage: "img/icon-calendar.png",
         buttonImageOnly: true,
-        buttonText: "Select date"
+        buttonText: "Select date",
+        dateFormat: 'dd/mm/yy'
       });
 $("#datepicker").datepicker().datepicker("setDate", new Date());
+
+$('.ContTable_load').show(); 
+$('#contTable').hide();
 
 /*Breadcrum home action*/ 
 $('.landingFromCont').on('click',function() { 
@@ -35,7 +39,9 @@ $.ajax({
                 { title: "Date" },
                 { title: "Tributa" }
             ]
-        });
+        });contTable
+        $('.ContTable_load').hide();
+        $('#contTable').show(); 
     },
     error: function (e) {
     },

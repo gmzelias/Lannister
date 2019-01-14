@@ -26,10 +26,6 @@ body {
 .shortinput{
   width: 49%;}
 
-  .trib-cal,.TribsTable_load{
-    text-align: center;
-  }
-
   .nuevo-cont{
     text-align: center;
     margin-top: 20px;
@@ -284,8 +280,9 @@ ul.blocknav {
   border-color: #007bff transparent #007bff transparent;
   animation: lds-dual-ring 1.2s linear infinite;
 }
-.location_load{
-  text-align: center
+.location_load, .recap_load,.trib-cal,.TribsTable_load,.ContTable_load {
+  text-align: center;
+  margin-top: 40px;
 }
 
 @keyframes lds-dual-ring {
@@ -296,3 +293,47 @@ ul.blocknav {
     transform: rotate(360deg);
   }
 }
+
+/*Boxes background of tributos*/
+
+#grad-dia {
+  border: none;
+border-radius:5px;
+box-shadow :5px;
+background: linear-gradient(90deg, rgba(255,0,0,0) 0%,  rgba(61,138,247) 100%);
+}
+
+#grad-mes {
+  border: none;
+border-radius:5px;
+box-shadow :5px;
+  background: linear-gradient(to right, rgba(255,0,0,0), rgba(255,131,81));
+}
+
+#grad-ano {
+  border: none;
+border-radius:5px;
+box-shadow :5px;
+  background: linear-gradient(to right, rgba(255,0,0,0), rgba(215,235,90));
+}
+
+.tribdata{font-size: 40px;
+font-weight: 600;
+text-align: center;}
+
+/*#grad-dia {
+border: none;
+border-radius:5px;
+box-shadow :5px;
+background:linear-gradient(110deg, #3d8af7 60%, #ffed4b 60%);
+}
+
+#grad-mes {
+  border: none;
+  background: linear-gradient(110deg, #ff8351 60%, #ffed4b 60%);
+}
+
+#grad-ano {
+  border: none;
+  background: linear-gradient(110deg, #d7eb5a 60%, #ffed4b 60%);
+}*/

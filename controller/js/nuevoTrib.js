@@ -16,7 +16,8 @@ $("#datepicker" ).datepicker({
     showOn: "button",
     buttonImage: "img/icon-calendar.png",
     buttonImageOnly: true,
-    buttonText: "Select date"
+    buttonText: "Select date",
+    dateFormat: 'dd/mm/yy'
   });
 $("#datepicker").datepicker().datepicker("setDate", new Date());
 

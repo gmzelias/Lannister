@@ -4,7 +4,7 @@
   "description": "simple dynamic site made with Node.js and Express.js.",
   "main": "app.js",
   "scripts": {
-    "start":"node app.js",
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Elias Gomez",
@@ -13,6 +13,7 @@
     "body-parser": "^1.18.3",
     "bootstrap": "^4.2.1",
     "express": "^4.15.3",
+    "moment": "^2.23.0",
     "mysql": "^2.16.0",
     "pug": "^2.0.0-rc.2"
   }
